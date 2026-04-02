@@ -23,7 +23,6 @@
         }
       });
 
-      var container = document.querySelector("#unity-container");
       var canvas = document.querySelector("#unity-canvas");
 
       var buildUrl = "Build";
@@ -49,9 +48,7 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        createUnityInstance(canvas, config).then((unityInstance) => {
-          // Unity loaded
-        }).catch((message) => {
+        createUnityInstance(canvas, config).catch((message) => {
           alert(message);
         });
       };
